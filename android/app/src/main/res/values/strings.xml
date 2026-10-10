@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Bluetooth Car</string>
+    <string name="connect">Connect Bluetooth</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="status_disconnected">Status: Disconnected</string>
+    <string name="status_connecting">Status: Connecting...</string>
+    <string name="status_connected">Status: Connected to %s</string>
+    <string name="speed_control">Speed Control</string>
+    <string name="speed_label">Speed: %d%%</string>
+    <string name="crash_prevention">Crash Prevention</string>
+    <string name="select_device">Select Bluetooth Device</string>
+    <string name="no_paired_devices">No paired Bluetooth devices found</string>
+    <string name="bluetooth_disabled">Bluetooth is disabled. Please enable Bluetooth.</string>
+    <string name="permission_required">Bluetooth Nearby Devices permission is required to connect.</string>
+    <string name="comm_log_title">Live Communication Log</string>
+    <string name="clear_log">Clear</string>
+    <string name="log_opened">Communication log opened</string>
+    <string name="log_closed">Communication log hidden</string>
+</resources>

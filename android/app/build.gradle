@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace = 'com.example.bluetoothcar'
+    compileSdk = 37
+
+    defaultConfig {
+        applicationId = "com.example.bluetoothcar"
+        minSdk = 23
+        targetSdk = 37
+        versionCode = 1
+        versionName = "1.0.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            def keystoreFile = rootProject.file("release-keystore.jks")
+            if (keystoreFile.exists()) {
+                storeFile keystoreFile
+                storePassword System.getenv("SIGNING_STORE_PASSWORD") ?: ""
+                keyAlias System.getenv("SIGNING_KEY_ALIAS") ?: ""
+                keyPassword System.getenv("SIGNING_KEY_PASSWORD") ?: ""
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            def storePass = System.getenv("SIGNING_STORE_PASSWORD")
+            def keyAlias = System.getenv("SIGNING_KEY_ALIAS")
+            def keyPass = System.getenv("SIGNING_KEY_PASSWORD")
+            def keystoreFile = rootProject.file("release-keystore.jks")
+            if (keystoreFile.exists() &&
+                    storePass != null && !storePass.isEmpty() &&
+                    keyAlias != null && !keyAlias.isEmpty() &&
+                    keyPass != null && !keyPass.isEmpty()) {
+                signingConfig signingConfigs.release
+            } else {
+                signingConfig signingConfigs.debug
+            }
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+}

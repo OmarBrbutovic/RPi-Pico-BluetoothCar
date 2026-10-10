@@ -1,0 +1,50 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.aab
+*.apk
+output-metadata.json
+
+
+# Crashlytics configuration
+com_crashlytics_export_strings.xml
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Signing / Keystore files
+*.jks
+*.keystore
+.signing/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+/vaktija/google-services.json
+
+# Android Profiling
+*.hprof
+
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
